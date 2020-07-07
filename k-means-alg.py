@@ -55,25 +55,33 @@ def calc():
                 print ("assign (", C1[2], ",", p[2], ")\n")
         sum_x = 0
         sum_y = 0
+        delt1 = -1
         for p in assertC1:
             sum_x += p[0]
             sum_y += p[1]
-        newC1 = ((sum_x) / len(assertC1), (sum_y) / len(assertC1), (C1[2] + '\''))
-        delt1 = delta(C1, newC1)
-        print (newC1[2], "= (",  round(newC1[0],5), ",",  round(newC1[1],5), ")")
-        print ("d(", C1[2], ",", newC1[2], ") =", round(delt1,5), "\n")
-        C1 = newC1
+        if len(assertC1) > 0:
+            newC1 = ((sum_x) / len(assertC1), (sum_y) / len(assertC1), (C1[2] + '\''))
+            delt1 = delta(C1, newC1)
+            print (newC1[2], "= (",  round(newC1[0],5), ",",  round(newC1[1],5), ")")
+            print ("d(", C1[2], ",", newC1[2], ") =", round(delt1,5), "\n")
+            C1 = newC1
+        else: 
+            print("No points associated with C1\n")
         
         sum_x = 0
         sum_y = 0
+        delt2 = -1
         for p in assertC2:
             sum_x += p[0]
             sum_y += p[1]
-        newC2 = ((sum_x) / len(assertC2), (sum_y) / len(assertC2), (C2[2] + '\''))
-        delt2 = delta(C2, newC2)
-        print (newC2[2], "= (", round(newC2[0],5), ",", round(newC2[1],5), ")") 
-        print ("d(", C2[2], ",", newC2[2], ") =", round(delt2,5), "\n")
-        C2 = newC2
+        if len(assertC2) > 0:
+            newC2 = ((sum_x) / len(assertC2), (sum_y) / len(assertC2), (C2[2] + '\''))
+            delt2 = delta(C2, newC2)
+            print (newC2[2], "= (", round(newC2[0],5), ",", round(newC2[1],5), ")") 
+            print ("d(", C2[2], ",", newC2[2], ") =", round(delt2,5), "\n")
+            C2 = newC2
+        else: 
+            print("No points associated with C2\n")
         
         if (delt1 > delt2):
             delt = delt1
