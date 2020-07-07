@@ -1,18 +1,28 @@
 import math
 
 DELTA = 0.25
-A = (2,2, 'A')
-B = (2,0, 'B')
-C = (-2,2, 'C')
-D = (-1,-2, 'D')
-E = (0,-3, 'E')
+A = (1,3, 'A')
+B = (1,2, 'B')
+C = (2,1, 'C')
+D = (-3,1, 'D')
+E = (-2,-1, 'E')
+F = (0,-2, 'F')
 
-points = [A,B,C,D,E]
+points = [A,B,C,D,E, F]
 
-Z1 = (0,0, 'F')
-Z2 = (-2,-3, 'G')
+Z1 = (1,1, 'G')
+Z2 = (-3,-2, 'H')
 
 def delta(a, b):
+	return deltaM(a,b)
+
+def deltaM(a, b):
+    dx = a[0]-b[0]
+    dy = a[1]-b[1]
+    return abs(dx) + abs(dy)
+	
+	
+def deltaE(a, b):
     dx = a[0]-b[0]
     dy = a[1]-b[1]
     return math.sqrt(math.pow(dx, 2) + math.pow(dy, 2))
