@@ -89,5 +89,3 @@ def calc():
             delt = delt2
 
 calc()
-    
-
